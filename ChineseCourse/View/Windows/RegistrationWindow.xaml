@@ -1,0 +1,247 @@
+﻿<Window x:Class="ChineseCourse.View.Windows.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChineseCourse.View.Windows"
+        mc:Ignorable="d"
+        Title="RegistrationWindow" Height="1080" 
+        Width="1920" 
+        WindowStartupLocation="CenterScreen" 
+        ResizeMode="NoResize" 
+        WindowState="Maximized">
+    <Window.Resources>
+        <Style x:Key="RoundedTextBoxStyle" TargetType="TextBox">
+            <!-- Сохраняем все стандартные свойства -->
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#FFABADB3"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <!-- Внешний контейнер с закругленными углами -->
+                        <Border x:Name="border" 
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="35"
+                    SnapsToDevicePixels="True">
+                            <!-- Внутренний ScrollViewer (стандартный для TextBox) -->
+                            <ScrollViewer x:Name="PART_ContentHost"
+                              Focusable="false"
+                              HorizontalScrollBarVisibility="Hidden"
+                              VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <!-- Триггеры для состояний (фокус, ошибка и т.д.) -->
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter TargetName="border" Property="Opacity" Value="0.56"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#FF7EB4EA"/>
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="true">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#FF569DE5"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="RoundedPasswordBoxStyle" TargetType="PasswordBox">
+            <!-- Сохраняем все стандартные свойства -->
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#FFABADB3"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="PasswordBox">
+                        <!-- Внешний контейнер с закругленными углами -->
+                        <Border x:Name="border" 
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="35"
+                    SnapsToDevicePixels="True">
+                            <!-- Внутренний ScrollViewer (стандартный для TextBox) -->
+                            <ScrollViewer x:Name="PART_ContentHost"
+                              Focusable="false"
+                              HorizontalScrollBarVisibility="Hidden"
+                              VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <!-- Триггеры для состояний (фокус, ошибка и т.д.) -->
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter TargetName="border" Property="Opacity" Value="0.56"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#FF7EB4EA"/>
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="true">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#FF569DE5"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="RoundedButtonStyle" TargetType="Button">
+            <!-- Базовые свойства (можно переопределять при использовании) -->
+            <Setter Property="Background" Value="#D95208"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="#FF707070"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="10 5"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <!-- Основная граница с закругленными углами -->
+                        <Border x:Name="border"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="35"
+                    SnapsToDevicePixels="True">
+                            <!-- ContentPresenter для отображения содержимого -->
+                            <ContentPresenter x:Name="contentPresenter"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                RecognizesAccessKey="True"/>
+                        </Border>
+                        <!-- Триггеры для визуальных состояний -->
+                        <ControlTemplate.Triggers>
+                            <!-- Наведение мыши -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#CCCCCC"/>
+                                <Setter TargetName="border" Property="BorderBrush" Value="#FF505050"/>
+                            </Trigger>
+                            <!-- Нажатие -->
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#BBBBBB"/>
+                                <Setter TargetName="border" Property="BorderBrush" Value="#FF303030"/>
+                                <Setter TargetName="contentPresenter" Property="Margin" Value="0 1 0 0"/>
+                            </Trigger>
+                            <!-- Отключенное состояние -->
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="border" Property="Opacity" Value="0.6"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1.5*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="80" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="10" />
+            
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Введите данные" Grid.Column="1" Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Regular" FontSize="70"/>
+
+        <TextBox Grid.Row="3" Grid.Column="1" x:Name="FirstNameTb" 
+Style="{StaticResource RoundedTextBoxStyle}" VerticalContentAlignment="Center" FontWeight="Regular" FontSize="30"/>
+        <TextBlock Grid.Column="1" Grid.Row="3" Text="Имя" FontSize="30" IsHitTestVisible="False" VerticalAlignment="Center" Margin="30 0 10 0" Foreground="#6B6B6B">
+            <TextBlock.Style>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=FirstNameTb}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+
+        <TextBox Grid.Row="5" Grid.Column="1" x:Name="LastNameTb" 
+Style="{StaticResource RoundedTextBoxStyle}" VerticalContentAlignment="Center" FontWeight="Regular" FontSize="30"/>
+        <TextBlock Grid.Column="1" Grid.Row="5" Text="Фамилия" FontSize="30" IsHitTestVisible="False" VerticalAlignment="Center" Margin="30 0 10 0" Foreground="#6B6B6B">
+            <TextBlock.Style>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=LastNameTb}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+
+        <TextBox Grid.Row="7" Grid.Column="1" x:Name="EmailTb" 
+Style="{StaticResource RoundedTextBoxStyle}" VerticalContentAlignment="Center" FontWeight="Regular" FontSize="30"/>
+        <TextBlock Grid.Column="1" Grid.Row="7" Text="Почта" FontSize="30" IsHitTestVisible="False" VerticalAlignment="Center" Margin="30 0 10 0" Foreground="#6B6B6B">
+            <TextBlock.Style>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=EmailTb}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+
+        <PasswordBox x:Name="PasswordPb" Style="{StaticResource RoundedPasswordBoxStyle}" PasswordChanged="PasswordPb_PasswordChanged"  Grid.Row="9" Grid.Column="1" VerticalContentAlignment="Center" FontWeight="Regular" FontSize="30"/>
+        <TextBlock x:Name="PasswordPlaceholder" Grid.Row="9" Grid.Column="1" FontWeight="Regular" FontSize="30" VerticalAlignment="Center" Margin="30 0 10 0" Foreground="#6B6B6B"
+       Text="Пароль" 
+       IsHitTestVisible="False"
+       Visibility="Visible"/>
+
+        <Button Content="Зарегистрироваться" Grid.Column="1" Grid.Row="13" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Regular" Height="80" Width="500" FontSize="40"
+        Style="{StaticResource RoundedButtonStyle}"/>
+
+        <TextBlock Grid.Row="11"
+           Grid.Column="1"
+           HorizontalAlignment="Center"
+           FontSize="40"
+           
+           >
+    <Hyperlink Name="RegistrationHp" Foreground="#D95208" FontSize="20"
+               >
+        Есть аккаунт?
+    </Hyperlink>
+        </TextBlock>
+
+
+
+
+
+
+
+    </Grid>
+</Window>

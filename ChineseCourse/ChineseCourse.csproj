@@ -59,6 +59,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="View\Windows\AccountWindow.xaml.cs">
+      <DependentUpon>AccountWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Windows\AuthorizationWindow.xaml.cs">
       <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
     </Compile>
@@ -74,8 +77,26 @@
     <Compile Include="View\Windows\Hello3Window.xaml.cs">
       <DependentUpon>Hello3Window.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Windows\Hello4Window.xaml.cs">
+      <DependentUpon>Hello4Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Hello5Window.xaml.cs">
+      <DependentUpon>Hello5Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Hello6Window.xaml.cs">
+      <DependentUpon>Hello6Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Hello7Window.xaml.cs">
+      <DependentUpon>Hello7Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Hello8Window.xaml.cs">
+      <DependentUpon>Hello8Window.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\RegistrationWindow.xaml.cs">
+      <DependentUpon>RegistrationWindow.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -105,6 +126,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="View\Windows\AccountWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Windows\AuthorizationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -125,7 +150,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Windows\Hello4Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Hello5Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Hello6Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Hello7Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Hello8Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Windows\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\RegistrationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -144,6 +193,45 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Group 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Group 22.png" />
+    <Resource Include="Resources\Rectangle 27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Group 23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Group 24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Group 25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Group 26.png" />
+    <Resource Include="Resources\Group 27.png" />
+    <Resource Include="Resources\Group 28.png" />
+    <Resource Include="Resources\Group 29.png" />
+    <Resource Include="Resources\Group 30.png" />
+    <Resource Include="Resources\Group 31.png" />
+    <Resource Include="Resources\Group 32.png" />
+    <Resource Include="Resources\Group 33.png" />
+    <Resource Include="Resources\Group 34.png" />
+    <Resource Include="Resources\Rectangle 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Group 3.png" />
+    <Resource Include="Resources\Group 4.png" />
+    <Resource Include="Resources\Group 5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Rectangle 51.png" />
+    <Resource Include="Resources\Rectangle 52.png" />
+    <Resource Include="Resources\Rectangle 53.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Rectangle 521.png" />
+    <Resource Include="Resources\Rectangle 522.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

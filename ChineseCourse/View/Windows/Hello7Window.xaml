@@ -1,11 +1,11 @@
-﻿<Window x:Class="ChineseCourse.View.Windows.Hello2Window"
+﻿<Window x:Class="ChineseCourse.View.Windows.Hello7Window"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChineseCourse.View.Windows"
         mc:Ignorable="d"
-        Title="Hello2Window" Height="1080" 
+        Title="Hello7Window" Height="1080" 
         Width="1920" 
         WindowStartupLocation="CenterScreen" 
         ResizeMode="NoResize" 
@@ -73,8 +73,9 @@
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
 
+        <Image Source="/Resources/Group 32.png" Grid.Row="1" Margin="80 40 80 40"/>
         
-        <Image Source="/Resources/Group 23.png" Grid.Row="3" Margin="100 0 600 0" />
+        <Image Source="/Resources/Group 31.png" Grid.Row="3" Margin="100 0 600 0" />
 
 
         <Grid Grid.Row="5">
@@ -86,6 +87,57 @@
                 <ColumnDefinition Width="250" />
             </Grid.ColumnDefinitions>
             <Image Source="/Resources/Rectangle 27.png" Grid.Column="1"/>
+
+            <Grid Grid.Column="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <Image Source="/Resources/Rectangle 51.png" />
+                <Image Source="/Resources/Rectangle 52.png" Grid.Row="2"/>
+                <Image Source="/Resources/Rectangle 53.png"  Grid.Row="4"/>
+
+                
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Уверенное общение" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="DemiBold" FontSize="30" TextWrapping="Wrap" TextAlignment="Left" />
+                    <TextBlock Text="Практика речи и понимания на слух без стресса" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Regular" FontSize="25" TextWrapping="Wrap" TextAlignment="Left" />
+
+                </Grid>
+                <Grid Grid.Column="2" Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Расширение словарного запаса" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="DemiBold" FontSize="30" TextWrapping="Wrap" TextAlignment="Left" />
+                    <TextBlock Text="Часто используемые слова и полезные фразы" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Regular" FontSize="25" TextWrapping="Wrap" TextAlignment="Left"/>
+                </Grid>
+                <Grid Grid.Column="2" Grid.Row="4">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Привычка заниматься регулярно"  HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="DemiBold" FontSize="30" TextWrapping="Wrap" TextAlignment="Left"/>
+                    <TextBlock Text="Умные напоминания, нескучные уроки и другое" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Regular" FontSize="25" TextWrapping="Wrap" TextAlignment="Left"/>
+                </Grid>
+            </Grid>
+            
         </Grid>
 
         <Button Content="Далее" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Regular" Height="80" Width="450" FontSize="40" Style="{StaticResource RoundedButtonStyle}" />

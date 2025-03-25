@@ -1,11 +1,11 @@
-﻿<Window x:Class="ChineseCourse.View.Windows.Hello2Window"
+﻿<Window x:Class="ChineseCourse.View.Windows.Hello8Window"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChineseCourse.View.Windows"
         mc:Ignorable="d"
-        Title="Hello2Window" Height="1080" 
+        Title="Hello8Window" Height="1080" 
         Width="1920" 
         WindowStartupLocation="CenterScreen" 
         ResizeMode="NoResize" 
@@ -13,8 +13,8 @@
     <Window.Resources>
         <Style x:Key="RoundedButtonStyle" TargetType="Button">
             <!-- Базовые свойства (можно переопределять при использовании) -->
-            <Setter Property="Background" Value="#D95208"/>
-            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
             <Setter Property="BorderBrush" Value="#FF707070"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="Padding" Value="10 5"/>
@@ -69,12 +69,12 @@
             <RowDefinition Height="20" />
             <RowDefinition Height="1*" />
             <RowDefinition Height="20" />
-            <RowDefinition Height="auto" />
+            <RowDefinition Height="150" />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
 
-        
-        <Image Source="/Resources/Group 23.png" Grid.Row="3" Margin="100 0 600 0" />
+        <Image Source="/Resources/Rectangle 4.png" Grid.Row="1" Margin="80 40 80 40"/>
+        <Image Source="/Resources/Group 34.png" Grid.Row="3" Margin="100 0 600 0" />
 
 
         <Grid Grid.Row="5">
@@ -86,8 +86,58 @@
                 <ColumnDefinition Width="250" />
             </Grid.ColumnDefinitions>
             <Image Source="/Resources/Rectangle 27.png" Grid.Column="1"/>
+
+            <Grid Grid.Column="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="150" />
+                </Grid.RowDefinitions>
+
+                <Button Style="{StaticResource RoundedButtonStyle}" >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="20" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Column="2" Text="Начать с основ" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="DemiBold" FontSize="30" TextWrapping="Wrap" TextAlignment="Left"/>
+                        <TextBlock Text="Пройдите вводный урок из курса китайского" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Regular" FontSize="25" TextWrapping="Wrap" TextAlignment="Left" />
+                        
+                        <Image Source="/Resources/Rectangle 521.png" Grid.RowSpan="3" Width="100"/>
+
+                        
+                    </Grid>
+                </Button>
+
+                <Button Style="{StaticResource RoundedButtonStyle}" Grid.Row="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="20" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Column="2" Text="Определить мой уровень" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="DemiBold" FontSize="30" TextWrapping="Wrap" TextAlignment="Left"/>
+                        <TextBlock Text="Лис посоветует, с чего лучше начать               " Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Regular" FontSize="25" TextWrapping="Wrap" TextAlignment="Left" />
+                        
+                        <Image Source="/Resources/Rectangle 522.png" Grid.RowSpan="3"/>
+
+                    </Grid>
+                </Button>
+            </Grid>
+            
         </Grid>
 
-        <Button Content="Далее" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Regular" Height="80" Width="450" FontSize="40" Style="{StaticResource RoundedButtonStyle}" />
+        
     </Grid>
 </Window>

@@ -1,11 +1,11 @@
-﻿<Window x:Class="ChineseCourse.View.Windows.Hello2Window"
+﻿<Window x:Class="ChineseCourse.View.Windows.Hello5Window"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChineseCourse.View.Windows"
         mc:Ignorable="d"
-        Title="Hello2Window" Height="1080" 
+        Title="Hello5Window" Height="1080" 
         Width="1920" 
         WindowStartupLocation="CenterScreen" 
         ResizeMode="NoResize" 
@@ -13,8 +13,8 @@
     <Window.Resources>
         <Style x:Key="RoundedButtonStyle" TargetType="Button">
             <!-- Базовые свойства (можно переопределять при использовании) -->
-            <Setter Property="Background" Value="#D95208"/>
-            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
             <Setter Property="BorderBrush" Value="#FF707070"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="Padding" Value="10 5"/>
@@ -26,16 +26,16 @@
                     <ControlTemplate TargetType="Button">
                         <!-- Основная граница с закругленными углами -->
                         <Border x:Name="border"
-                    Background="{TemplateBinding Background}"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="{TemplateBinding BorderThickness}"
-                    CornerRadius="35"
-                    SnapsToDevicePixels="True">
+                 Background="{TemplateBinding Background}"
+                 BorderBrush="{TemplateBinding BorderBrush}"
+                 BorderThickness="{TemplateBinding BorderThickness}"
+                 CornerRadius="35"
+                 SnapsToDevicePixels="True">
                             <!-- ContentPresenter для отображения содержимого -->
                             <ContentPresenter x:Name="contentPresenter"
-                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                RecognizesAccessKey="True"/>
+                             HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                             VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                             RecognizesAccessKey="True"/>
                         </Border>
                         <!-- Триггеры для визуальных состояний -->
                         <ControlTemplate.Triggers>
@@ -69,12 +69,13 @@
             <RowDefinition Height="20" />
             <RowDefinition Height="1*" />
             <RowDefinition Height="20" />
-            <RowDefinition Height="auto" />
+            <RowDefinition Height="150" />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
-
         
-        <Image Source="/Resources/Group 23.png" Grid.Row="3" Margin="100 0 600 0" />
+        <Image Source="/Resources/Group 29.png" Grid.Row="1" Margin="80 40 80 40"/>
+
+        <Image Source="/Resources/Group 28.png" Grid.Row="3" Margin="100 0 600 0" />
 
 
         <Grid Grid.Row="5">
@@ -86,8 +87,47 @@
                 <ColumnDefinition Width="250" />
             </Grid.ColumnDefinitions>
             <Image Source="/Resources/Rectangle 27.png" Grid.Column="1"/>
+
+            <Grid Grid.Column="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <Button Style="{StaticResource RoundedButtonStyle}">
+                    <Grid>
+                        <TextBlock Text="5 минут в день" FontSize="50" Grid.Column="3"/>
+                    </Grid>
+                </Button>
+
+                <Button Style="{StaticResource RoundedButtonStyle}" Grid.Row="2">
+                    <Grid>
+                        <TextBlock Text="10 минут в день" FontSize="50" Grid.Column="3"/>
+                    </Grid>
+                </Button>
+
+                <Button Style="{StaticResource RoundedButtonStyle}" Grid.Row="4">
+                    <Grid>
+                        <TextBlock Text="15 минут в день" FontSize="50" Grid.Column="3"/>
+                    </Grid>
+                </Button>
+
+                <Button Style="{StaticResource RoundedButtonStyle}" Grid.Row="6">
+                    <Grid>
+                        <TextBlock Text="20 минут в день" FontSize="50" Grid.Column="3"/>
+                    </Grid>
+                </Button>
+
+
+
+            </Grid>
         </Grid>
 
-        <Button Content="Далее" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Regular" Height="80" Width="450" FontSize="40" Style="{StaticResource RoundedButtonStyle}" />
+
     </Grid>
 </Window>
