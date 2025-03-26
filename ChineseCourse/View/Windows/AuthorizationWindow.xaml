@@ -199,7 +199,7 @@
                    FontSize="40"
                    
                    >
-            <Hyperlink Name="RegistrationHp" Foreground="#D95208" FontSize="20"
+            <Hyperlink Name="RegistrationHp" Click="RegistrationHp_Click" Foreground="#D95208" FontSize="20"
                        >
                 Нет аккаунта? Зарегистрируйтесь
             </Hyperlink>

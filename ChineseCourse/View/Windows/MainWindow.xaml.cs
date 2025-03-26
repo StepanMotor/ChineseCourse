@@ -23,5 +23,19 @@ namespace ChineseCourse.View.Windows
         {
             InitializeComponent();
         }
+
+        private void UserBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AuthRegistWindow authRegistWindow = new AuthRegistWindow();
+            authRegistWindow.Show();
+            Close();
+        }
+
+        private void EmployeeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AuthorizationWindow authorizationWindow = new AuthorizationWindow();
+            authorizationWindow.Show();
+            Close();
+        }
     }
 }

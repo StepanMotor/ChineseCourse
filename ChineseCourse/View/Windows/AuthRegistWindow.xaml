@@ -80,7 +80,7 @@
 
             <TextBlock Text="Уже есть аккаунт?" Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Regular" FontSize="50" />
             <TextBlock Text="Начните с того, на чем остановились" Grid.Row="3"  HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Regular" FontSize="40" TextWrapping="Wrap" TextAlignment="Center" />
-            <Button Content="Войти" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Regular" Height="80" Width="450" FontSize="40" Style="{StaticResource RoundedButtonStyle}" />
+            <Button Name="ExitBtn" Click="ExitBtn_Click" Content="Войти" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Regular" Height="80" Width="450" FontSize="40" Style="{StaticResource RoundedButtonStyle}" />
 
         </Grid>
         <Polygon Points="100 100 200 200"/>
@@ -97,7 +97,7 @@
 
             <TextBlock Text="Нет учетной записи?" Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Regular" FontSize="50" />
             <TextBlock Text="Начните учить язык прямо сейчас" Grid.Row="3"  HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Regular" FontSize="40" TextWrapping="Wrap" TextAlignment="Center" />
-            <Button Content="Зарегистрироваться" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Regular" Height="80" Width="450" FontSize="40" Style="{StaticResource RoundedButtonStyle}" />
+            <Button Name="RegistrationBtn" Click="RegistrationBtn_Click" Content="Зарегистрироваться" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Regular" Height="80" Width="450" FontSize="40" Style="{StaticResource RoundedButtonStyle}" />
         </Grid>
         
     </Grid>

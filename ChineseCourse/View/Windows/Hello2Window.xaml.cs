@@ -23,5 +23,12 @@ namespace ChineseCourse.View.Windows
         {
             InitializeComponent();
         }
+
+        private void NextBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Hello3Window hello3Window = new Hello3Window();
+            hello3Window.Show();
+            Close();
+        }
     }
 }

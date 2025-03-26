@@ -31,5 +31,19 @@ namespace ChineseCourse.View.Windows
            ? Visibility.Collapsed
            : Visibility.Visible;
         }
+
+        private void RegistrationHp_Click(object sender, RoutedEventArgs e)
+        {
+            AuthorizationWindow authorizationWindow = new AuthorizationWindow();
+            authorizationWindow.Show();
+            Close();
+        }
+
+        private void RegistrationBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Hello1Window hello1Window = new Hello1Window();
+            hello1Window.Show();
+            Close();
+        }
     }
 }

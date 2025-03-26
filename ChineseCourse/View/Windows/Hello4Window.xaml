@@ -98,7 +98,7 @@
                     <RowDefinition Height="1*" />
                 </Grid.RowDefinitions>
 
-                <Button Style="{StaticResource RoundedButtonStyle}">
+                <Button Style="{StaticResource RoundedButtonStyle}" Name="NextBtn" Click="NextBtn_Click">
                     <Grid>
                         <TextBlock Text="Полезное занятие" FontSize="50" Grid.Column="3"/>
                     </Grid>

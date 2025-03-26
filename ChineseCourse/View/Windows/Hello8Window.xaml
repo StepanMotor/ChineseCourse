@@ -94,7 +94,7 @@
                     <RowDefinition Height="150" />
                 </Grid.RowDefinitions>
 
-                <Button Style="{StaticResource RoundedButtonStyle}" >
+                <Button Style="{StaticResource RoundedButtonStyle}" Name="NextBtn" Click="NextBtn_Click" >
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="100" />

@@ -23,5 +23,12 @@ namespace ChineseCourse.View.Windows
         {
             InitializeComponent();
         }
+
+        private void NextBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Hello8Window helloW8indow = new Hello8Window();
+            helloW8indow.Show();
+            Close();
+        }
     }
 }

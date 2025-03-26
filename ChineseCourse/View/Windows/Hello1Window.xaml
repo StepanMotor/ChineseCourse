@@ -87,6 +87,6 @@
             <Image Source="/Resources/Rectangle 27.png" Grid.Column="1"/>
         </Grid>
 
-        <Button Content="Далее" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Regular" Height="80" Width="450" FontSize="40" Style="{StaticResource RoundedButtonStyle}" />
+        <Button Name="NextBtn" Click="NextBtn_Click" Content="Далее" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Regular" Height="80" Width="450" FontSize="40" Style="{StaticResource RoundedButtonStyle}" />
     </Grid>
 </Window>

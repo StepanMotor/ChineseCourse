@@ -23,5 +23,12 @@ namespace ChineseCourse.View.Windows
         {
             InitializeComponent();
         }
+
+        private void NextBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Hello5Window hello5Window = new Hello5Window();
+            hello5Window.Show();
+            Close();
+        }
     }
 }
