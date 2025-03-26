@@ -15,21 +15,13 @@ using System.Windows.Shapes;
 namespace ChineseCourse.View.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для AccountWindow.xaml
+    /// Логика взаимодействия для LevelsWindow.xaml
     /// </summary>
-    public partial class AccountWindow : Window
+    public partial class LevelsWindow : Window
     {
-        public AccountWindow()
+        public LevelsWindow()
         {
             InitializeComponent();
-        }
-
-        private void PasswordPb_PasswordChanged(object sender, RoutedEventArgs e)
-        {
-            PasswordPlaceholder.Visibility =
-       (sender as PasswordBox)?.Password.Length > 0
-           ? Visibility.Collapsed
-           : Visibility.Visible;
         }
     }
 }

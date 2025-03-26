@@ -92,6 +92,9 @@
     <Compile Include="View\Windows\Hello8Window.xaml.cs">
       <DependentUpon>Hello8Window.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Windows\LevelsWindow.xaml.cs">
+      <DependentUpon>LevelsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -170,6 +173,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Windows\LevelsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Windows\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -232,6 +239,18 @@
   <ItemGroup>
     <Resource Include="Resources\Rectangle 521.png" />
     <Resource Include="Resources\Rectangle 522.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Ellipse 24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\image 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Rectangle 25.png" />
+    <Resource Include="Resources\Rectangle 29.png" />
+    <Resource Include="Resources\Rectangle 30.png" />
+    <Resource Include="Resources\Rectangle 31.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

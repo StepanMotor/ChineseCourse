@@ -66,11 +66,6 @@
         <ImageBrush ImageSource="/Resources/non.png" Stretch="UniformToFill"/>
     </Window.Background>
     <Grid>
-       <!--<Image Source="/Resources/non.png" Stretch="UniformToFill"  Grid.ColumnSpan="3"
-              Grid.RowSpan="7"/>-->
-
-
-
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
