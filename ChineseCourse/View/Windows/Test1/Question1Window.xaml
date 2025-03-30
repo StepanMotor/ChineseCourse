@@ -89,7 +89,7 @@
             </Grid.ColumnDefinitions>
             
             <Image Source="/Resources/Test1/Group 92.png" Grid.Column="1"/>
-            <Button Grid.Column="1" Background="Transparent" BorderBrush="Transparent"/>
+            <Button Name="NextBtn" Click="NextBtn_Click" Grid.Column="1" Background="Transparent" BorderBrush="Transparent"/>
 
             <Image Source="/Resources/Test1/Group 94.png" Grid.Column="3" />
             <Button Grid.Column="3" Background="Transparent" BorderBrush="Transparent"/>

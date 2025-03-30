@@ -15,19 +15,19 @@ using System.Windows.Shapes;
 namespace ChineseCourse.View.Windows.Test1
 {
     /// <summary>
-    /// Логика взаимодействия для Question3Window.xaml
+    /// Логика взаимодействия для EndTestWindow.xaml
     /// </summary>
-    public partial class Question3Window : Window
+    public partial class EndTestWindow : Window
     {
-        public Question3Window()
+        public EndTestWindow()
         {
             InitializeComponent();
         }
 
         private void NextBtn_Click(object sender, RoutedEventArgs e)
         {
-            Test1.Question4Window question4Window = new Question4Window();
-            question4Window.Show();
+            LevelsWindow levelsWindow = new LevelsWindow();
+            levelsWindow.Show();
             Close();
         }
     }

@@ -80,7 +80,7 @@
 
         <Image Source="/Resources/Test1/Group 76.png" Grid.Row="5" />
 
-        <Button Name="NextBtn" Content="Далее" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Regular" Height="80" Width="450" FontSize="40" Style="{StaticResource RoundedButtonStyle}" />
+        <Button Name="NextBtn" Click="NextBtn_Click" Content="Далее" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Regular" Height="80" Width="450" FontSize="40" Style="{StaticResource RoundedButtonStyle}" />
 
     </Grid>
 </Window>

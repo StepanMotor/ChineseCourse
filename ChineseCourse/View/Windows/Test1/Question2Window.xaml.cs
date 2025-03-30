@@ -23,5 +23,12 @@ namespace ChineseCourse.View.Windows.Test1
         {
             InitializeComponent();
         }
+
+        private void NextBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Test1.Question3Window question3Window = new Question3Window();
+            question3Window.Show();
+            Close();
+        }
     }
 }

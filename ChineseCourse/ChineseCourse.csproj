@@ -116,6 +116,9 @@
     <Compile Include="View\Windows\RegistrationWindow.xaml.cs">
       <DependentUpon>RegistrationWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Windows\Test1\EndTestWindow.xaml.cs">
+      <DependentUpon>EndTestWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Windows\Test1\InstructionsTestWindow.xaml.cs">
       <DependentUpon>InstructionsTestWindow.xaml</DependentUpon>
     </Compile>
@@ -244,6 +247,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Windows\RegistrationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Test1\EndTestWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -381,6 +388,9 @@
     <Resource Include="Resources\Test1\Group 92.png" />
     <Resource Include="Resources\Test1\Group 93.png" />
     <Resource Include="Resources\Test1\Group 94.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Test1\Group 95.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

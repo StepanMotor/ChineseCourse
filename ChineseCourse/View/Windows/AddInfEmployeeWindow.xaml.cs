@@ -26,5 +26,17 @@ namespace ChineseCourse.View.Windows
             RoleCmb.DisplayMemberPath = "Name";
            // RoleCmb.ItemsSource = App.context.Role.ToList();
         }
+
+        private void AddEmployeeBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ExitBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddEmployeeWindow addEmployeeWindow = new AddEmployeeWindow();
+            addEmployeeWindow.Show();
+            Close();
+        }
     }
 }

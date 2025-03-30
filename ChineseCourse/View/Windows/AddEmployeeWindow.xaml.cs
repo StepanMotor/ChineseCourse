@@ -23,5 +23,19 @@ namespace ChineseCourse.View.Windows
         {
             InitializeComponent();
         }
+
+        private void AddEmployeeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddInfEmployeeWindow addInfEmployeeWindow = new AddInfEmployeeWindow();
+            addInfEmployeeWindow.Show();
+            Close();
+        }
+
+        private void ExitBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ManagerWindow managerWindow = new ManagerWindow();
+            managerWindow.Show();
+            Close();
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChineseCourse.View.Windows.Test1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,13 @@ namespace ChineseCourse.View.Windows
         public LevelsWindow()
         {
             InitializeComponent();
+        }
+
+        private void Level1Btn_Click(object sender, RoutedEventArgs e)
+        {
+            Test1.InstructionsTestWindow instructionsTestWindow = new InstructionsTestWindow();
+            instructionsTestWindow.Show();
+            Close();
         }
     }
 }

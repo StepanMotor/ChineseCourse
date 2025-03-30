@@ -109,7 +109,7 @@ BorderBrush="Transparent"/>
                 <ColumnDefinition Width="100" />
             </Grid.ColumnDefinitions>
 
-            <Button Content="Назад" Grid.Column="3"  HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Regular" Height="80" Width="500" FontSize="40"
+            <Button Content="Назад" Name="ExitBtn" Click="ExitBtn_Click" Grid.Column="3"  HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Regular" Height="80" Width="500" FontSize="40"
         Style="{StaticResource RoundedButtonStyle}"/>
 
         </Grid>

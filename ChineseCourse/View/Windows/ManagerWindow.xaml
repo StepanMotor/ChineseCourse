@@ -81,7 +81,7 @@
 
             <Button Grid.Column="3"
 Background="Transparent"
-BorderBrush="Transparent"/>
+BorderBrush="Transparent" Name="ManagerBtn" Click="ManagerBtn_Click"/>
 
             <TextBlock Text="Менеджер" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Regular" FontSize="70" Grid.Column="1"/>
 
@@ -101,7 +101,7 @@ BorderBrush="Transparent"/>
                 <ColumnDefinition Width="100" />
             </Grid.ColumnDefinitions>
 
-            <Button Style="{StaticResource RoundedButtonStyle}" Grid.Column="1" Height="250" Width="500"  >
+            <Button Style="{StaticResource RoundedButtonStyle}" Grid.Column="1" Height="250" Width="500" Name="EmployeeBtn" Click="EmployeeBtn_Click"  >
                 <Grid Margin="10">
                     
                     <Grid.RowDefinitions>
@@ -114,7 +114,7 @@ BorderBrush="Transparent"/>
                 </Grid>
             </Button>
 
-            <Button Style="{StaticResource RoundedButtonStyle}" Grid.Column="3" Height="250" Width="500"  >
+            <Button Style="{StaticResource RoundedButtonStyle}" Grid.Column="3" Height="250" Width="500" Name="UsersBtn" Click="UsersBtn_Click" >
                 <Grid Margin="10">
 
                     <Grid.RowDefinitions>
