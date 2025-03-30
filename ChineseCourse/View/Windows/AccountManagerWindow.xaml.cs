@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace ChineseCourse.View.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для AccountWindow.xaml
+    /// Логика взаимодействия для AccountManagerWindow.xaml
     /// </summary>
-    public partial class AccountWindow : Window
+    public partial class AccountManagerWindow : Window
     {
-        public AccountWindow()
+        public AccountManagerWindow()
         {
             InitializeComponent();
         }
@@ -30,11 +30,6 @@ namespace ChineseCourse.View.Windows
        (sender as PasswordBox)?.Password.Length > 0
            ? Visibility.Collapsed
            : Visibility.Visible;
-        }
-
-        private void PasswordPb_PasswordChanged_1()
-        {
-
         }
     }
 }

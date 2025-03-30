@@ -17,7 +17,7 @@
             <!-- Базовые свойства (можно переопределять при использовании) -->
             <Setter Property="Background" Value="#D95208"/>
             <Setter Property="Foreground" Value="White"/>
-            <Setter Property="BorderBrush" Value="#FF707070"/>
+            <Setter Property="BorderBrush" Value="#C03907"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="Padding" Value="10 5"/>
             <Setter Property="FontSize" Value="14"/>
@@ -43,8 +43,8 @@
                         <ControlTemplate.Triggers>
                             <!-- Наведение мыши -->
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="#CCCCCC"/>
-                                <Setter TargetName="border" Property="BorderBrush" Value="#FF505050"/>
+                                <Setter TargetName="border" Property="Background" Value="#C03907"/>
+                                <Setter TargetName="border" Property="BorderBrush" Value="#C03907"/>
                             </Trigger>
                             <!-- Нажатие -->
                             <Trigger Property="IsPressed" Value="True">
