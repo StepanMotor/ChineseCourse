@@ -12,19 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ChineseCourse.View.Windows
+namespace ChineseCourse.View.Windows.Test1
 {
     /// <summary>
-    /// Логика взаимодействия для AddInfEmployeeWindow.xaml
+    /// Логика взаимодействия для InstructionsTestWindow.xaml
     /// </summary>
-    public partial class AddInfEmployeeWindow : Window
+    public partial class InstructionsTestWindow : Window
     {
-        public AddInfEmployeeWindow()
+        public InstructionsTestWindow()
         {
             InitializeComponent();
-            RoleCmb.SelectedValuePath = "id";
-            RoleCmb.DisplayMemberPath = "Name";
-           // RoleCmb.ItemsSource = App.context.Role.ToList();
         }
     }
 }

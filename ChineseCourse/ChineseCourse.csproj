@@ -116,6 +116,33 @@
     <Compile Include="View\Windows\RegistrationWindow.xaml.cs">
       <DependentUpon>RegistrationWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Windows\Test1\InstructionsTestWindow.xaml.cs">
+      <DependentUpon>InstructionsTestWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Test1\Question1Window.xaml.cs">
+      <DependentUpon>Question1Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Test1\Question2Window.xaml.cs">
+      <DependentUpon>Question2Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Test1\Question3Window.xaml.cs">
+      <DependentUpon>Question3Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Test1\Question4Window.xaml.cs">
+      <DependentUpon>Question4Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Test1\Tone1Window.xaml.cs">
+      <DependentUpon>Tone1Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Test1\Tone2Window.xaml.cs">
+      <DependentUpon>Tone2Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Test1\Tone3Window.xaml.cs">
+      <DependentUpon>Tone3Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Test1\Tone4Window.xaml.cs">
+      <DependentUpon>Tone4Window.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -220,6 +247,42 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Windows\Test1\InstructionsTestWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Test1\Question1Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Test1\Question2Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Test1\Question3Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Test1\Question4Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Test1\Tone1Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Test1\Tone2Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Test1\Tone3Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Test1\Tone4Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AppData\" />
@@ -294,6 +357,30 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Manager\Стата.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Group 75.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Test1\Group 76.png" />
+    <Resource Include="Resources\Test1\Group 77.png" />
+    <Resource Include="Resources\Test1\Group 78.png" />
+    <Resource Include="Resources\Test1\Group 79.png" />
+    <Resource Include="Resources\Test1\Group 80.png" />
+    <Resource Include="Resources\Test1\Group 81.png" />
+    <Resource Include="Resources\Test1\Group 82.png" />
+    <Resource Include="Resources\Test1\Group 83.png" />
+    <Resource Include="Resources\Test1\Group 84.png" />
+    <Resource Include="Resources\Test1\Group 85.png" />
+    <Resource Include="Resources\Test1\Group 86.png" />
+    <Resource Include="Resources\Test1\Group 87.png" />
+    <Resource Include="Resources\Test1\Group 88.png" />
+    <Resource Include="Resources\Test1\Group 89.png" />
+    <Resource Include="Resources\Test1\Group 90.png" />
+    <Resource Include="Resources\Test1\Group 91.png" />
+    <Resource Include="Resources\Test1\Group 92.png" />
+    <Resource Include="Resources\Test1\Group 93.png" />
+    <Resource Include="Resources\Test1\Group 94.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

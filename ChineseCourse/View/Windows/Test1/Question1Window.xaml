@@ -1,17 +1,16 @@
-﻿<Window x:Class="ChineseCourse.View.Windows.AddEmployeeWindow"
+﻿<Window x:Class="ChineseCourse.View.Windows.Test1.Question1Window"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ChineseCourse.View.Windows"
+        xmlns:local="clr-namespace:ChineseCourse.View.Windows.Test1"
         mc:Ignorable="d"
-        Title="AddEmployeeWindow" Height="1080" 
+        Title="Question1Window" Height="1080" 
         Width="1920" 
         WindowStartupLocation="CenterScreen" 
         ResizeMode="NoResize" 
         WindowState="Maximized">
     <Window.Resources>
-
         <Style x:Key="RoundedButtonStyle" TargetType="Button">
             <!-- Базовые свойства (можно переопределять при использовании) -->
             <Setter Property="Background" Value="#D95208"/>
@@ -27,16 +26,16 @@
                     <ControlTemplate TargetType="Button">
                         <!-- Основная граница с закругленными углами -->
                         <Border x:Name="border"
-                     Background="{TemplateBinding Background}"
-                     BorderBrush="{TemplateBinding BorderBrush}"
-                     BorderThickness="{TemplateBinding BorderThickness}"
-                     CornerRadius="35"
-                     SnapsToDevicePixels="True">
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="35"
+                SnapsToDevicePixels="True">
                             <!-- ContentPresenter для отображения содержимого -->
                             <ContentPresenter x:Name="contentPresenter"
-                                 HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                 RecognizesAccessKey="True"/>
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            RecognizesAccessKey="True"/>
                         </Border>
                         <!-- Триггеры для визуальных состояний -->
                         <ControlTemplate.Triggers>
@@ -63,59 +62,45 @@
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="130" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="70" />
             <RowDefinition Height="150" />
             <RowDefinition Height="50" />
-            <RowDefinition Height="6*" />
-            <RowDefinition Height="80" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
 
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="4*" />
-                <ColumnDefinition Width="50" />
-                <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="100" />
-            </Grid.ColumnDefinitions>
+        <Image Source="/Resources/Test1/Group 88.png" Grid.Row="1" Margin="50 25 50 25"/>
+        
+        <Image Source="/Resources/Test1/Group 84.png" Grid.Row="3" />
 
-            <Button Grid.Column="3"
-Background="Transparent"
-BorderBrush="Transparent"/>
 
-            <TextBlock Text="Сотрудники" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Regular" FontSize="70" Grid.Column="1"/>
 
-            <Image Source="/Resources/Ellipse 24.png" Grid.Column="3"/>
-        </Grid>
-
-        <ListView x:Name="EmployeeLv" Grid.Row="2" FontSize="20" Margin="100 0 100 0">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="ФИО" DisplayMemberBinding="{Binding FIO}"/>
-                    <GridViewColumn Header="Логин" DisplayMemberBinding="{Binding Login}"/>
-                    <GridViewColumn Header="Пароль" DisplayMemberBinding="{Binding Password}"/>
-                    <GridViewColumn Header="Роль" DisplayMemberBinding="{Binding Role.Name}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-
-        <Grid Grid.Row="4">
+        <Grid Grid.Row="5" HorizontalAlignment="Center">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="100" />
                 <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="100" />
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="100" />
             </Grid.ColumnDefinitions>
-
-            <Button Content="Добавить" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Regular" Height="80" Width="500" FontSize="40"
-        Style="{StaticResource RoundedButtonStyle}"/>
             
-            <Button Content="Назад" Grid.Column="3"  HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Regular" Height="80" Width="500" FontSize="40"
-        Style="{StaticResource RoundedButtonStyle}"/>
+            <Image Source="/Resources/Test1/Group 92.png" Grid.Column="1"/>
+            <Button Grid.Column="1" Background="Transparent" BorderBrush="Transparent"/>
 
+            <Image Source="/Resources/Test1/Group 94.png" Grid.Column="3" />
+            <Button Grid.Column="3" Background="Transparent" BorderBrush="Transparent"/>
+
+            <Image Source="/Resources/Test1/Group 93.png" Grid.Column="5"/>
+            <Button Grid.Column="5" Background="Transparent" BorderBrush="Transparent"/>
+
+            
         </Grid>
+
+        
 
     </Grid>
 </Window>

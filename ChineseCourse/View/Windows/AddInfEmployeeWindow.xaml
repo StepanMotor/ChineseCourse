@@ -297,7 +297,7 @@ Style="{StaticResource RoundedTextBoxStyle}" VerticalContentAlignment="Center" F
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Grid.Column="0" Text="Роль:" FontSize="30" IsHitTestVisible="False" VerticalAlignment="Center" Margin="30 0 10 0" Foreground="#6B6B6B" />
-                <ComboBox Grid.Column="2" Height="60"/>
+                <ComboBox Name="RoleCmb" Grid.Column="2" Height="60"/>
             </Grid>
             
             

@@ -72,18 +72,22 @@
 
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="6*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="50" />
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="100" />
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="1"
-                    Background="Transparent"
-                    BorderBrush="Transparent"/>
+            <Button Grid.Column="3"
+Background="Transparent"
+BorderBrush="Transparent"/>
 
-            <Image Source="/Resources/Ellipse 24.png" Grid.Column="1"/>
+            <TextBlock Text="Менеджер" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Regular" FontSize="70" Grid.Column="1"/>
+
+            <Image Source="/Resources/Ellipse 24.png" Grid.Column="3"/>
         </Grid>
-        
+
         <Image Source="/Resources/Manager/Стата.png" Grid.Row="2" />
 
         <Grid Grid.Row="4" >
