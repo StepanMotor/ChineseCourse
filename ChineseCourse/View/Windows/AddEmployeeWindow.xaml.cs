@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChineseCourse.Model1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,12 @@ namespace ChineseCourse.View.Windows
     /// </summary>
     public partial class AddEmployeeWindow : Window
     {
+            List<User> user = App.context.User.ToList();
         public AddEmployeeWindow()
         {
             InitializeComponent();
+
+            EmployeeLv.ItemsSource = App.context.User.ToList();
         }
 
         private void AddEmployeeBtn_Click(object sender, RoutedEventArgs e)

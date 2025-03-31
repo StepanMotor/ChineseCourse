@@ -31,5 +31,12 @@ namespace ChineseCourse.View.Windows
            ? Visibility.Collapsed
            : Visibility.Visible;
         }
+
+        private void ManagerBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ManagerWindow managerWindow = new ManagerWindow();
+            managerWindow.Show();
+            Close();
+        }
     }
 }

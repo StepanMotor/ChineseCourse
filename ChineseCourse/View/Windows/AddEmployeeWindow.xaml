@@ -89,13 +89,15 @@ BorderBrush="Transparent"/>
             <Image Source="/Resources/Ellipse 24.png" Grid.Column="3"/>
         </Grid>
 
-        <ListView x:Name="EmployeeLv" Grid.Row="2" FontSize="20" Margin="100 0 100 0">
+        <ListView x:Name="EmployeeLv" Grid.Row="2" FontSize="40" Margin="100 0 100 0">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="ФИО" DisplayMemberBinding="{Binding FIO}"/>
+                    <GridViewColumn Header="Имя" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Фамилия" DisplayMemberBinding="{Binding Surname}"/>
+                    <GridViewColumn Header="Отчество" DisplayMemberBinding="{Binding Patronymic}"/>
                     <GridViewColumn Header="Логин" DisplayMemberBinding="{Binding Login}"/>
                     <GridViewColumn Header="Пароль" DisplayMemberBinding="{Binding Password}"/>
-                    <GridViewColumn Header="Роль" DisplayMemberBinding="{Binding Role.Name}"/>
+                    <GridViewColumn Header="Роль" DisplayMemberBinding="{Binding Role1.Name}"/>
                 </GridView>
             </ListView.View>
         </ListView>

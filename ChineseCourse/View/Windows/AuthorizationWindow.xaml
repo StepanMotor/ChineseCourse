@@ -190,7 +190,7 @@
                IsHitTestVisible="False"
                Visibility="Visible"/>
 
-        <Button Content="Войти" Grid.Column="1" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Regular" Height="80" Width="500" FontSize="40"
+        <Button Content="Войти" Name="ExitBtn" Click="ExitBtn_Click" Grid.Column="1" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Regular" Height="80" Width="500" FontSize="40"
                 Style="{StaticResource RoundedButtonStyle}"/>
 
         <TextBlock Grid.Row="9"

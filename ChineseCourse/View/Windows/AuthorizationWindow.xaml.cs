@@ -38,5 +38,30 @@ namespace ChineseCourse.View.Windows
             registrationWindow.Show();
             Close();
         }
+
+        private void ExitBtn_Click(object sender, RoutedEventArgs e)
+        {
+            // Получаем значения из полей ввода
+            string login = LoginTb.Text; // предполагая, что LoginTb - это TextBox
+            string password = PasswordPb.Password; // предполагая, что PasswordPb - это PasswordBox
+
+            // Проверка логина и пароля
+            if (login == "admin" && password == "admin123")
+            {
+                ManagerWindow managerWindow = new ManagerWindow();
+                managerWindow.Show();
+                this.Close();
+            }
+            else if (login == "user" && password == "user123")
+            {
+                LevelsWindow levelsWindow = new LevelsWindow();
+                levelsWindow.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Неверный логин или пароль", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
     }
 }

@@ -31,5 +31,12 @@ namespace ChineseCourse.View.Windows
             instructionsTestWindow.Show();
             Close();
         }
+
+        private void AccountUserBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AccountWindow accountWindow = new AccountWindow();
+            accountWindow.Show();
+            Close();
+        }
     }
 }

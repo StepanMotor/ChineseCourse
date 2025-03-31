@@ -35,8 +35,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -58,6 +65,42 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model1\ChineModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChineModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1\ChineModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1\ChineModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChineModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model1\Role.cs">
+      <DependentUpon>ChineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1\Status.cs">
+      <DependentUpon>ChineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1\Task.cs">
+      <DependentUpon>ChineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1\TaskAndTheory.cs">
+      <DependentUpon>ChineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1\Theory.cs">
+      <DependentUpon>ChineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1\User.cs">
+      <DependentUpon>ChineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1\UserAndTask.cs">
+      <DependentUpon>ChineModel.tt</DependentUpon>
     </Compile>
     <Compile Include="View\Windows\AccountManagerWindow.xaml.cs">
       <DependentUpon>AccountManagerWindow.xaml</DependentUpon>
@@ -165,6 +208,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="Model1\ChineModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ChineModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1\ChineModel.edmx.diagram">
+      <DependentUpon>ChineModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -293,7 +344,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AppData\" />
-    <Folder Include="Model\" />
     <Folder Include="Styles\" />
     <Folder Include="View\Pages\" />
   </ItemGroup>
@@ -391,6 +441,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Test1\Group 95.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model1\ChineModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ChineModel.Context.cs</LastGenOutput>
+      <DependentUpon>ChineModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model1\ChineModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ChineModel.edmx</DependentUpon>
+      <LastGenOutput>ChineModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

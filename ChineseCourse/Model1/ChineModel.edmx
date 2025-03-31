@@ -1,0 +1,457 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище chineModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Task">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Discription" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TaskAndTheory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="idTask" Type="int" Nullable="false" />
+          <Property Name="idTheory" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Theory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Symbol" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Discription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Photo" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Patronymic" Type="nvarchar" MaxLength="100" />
+          <Property Name="Level" Type="int" />
+          <Property Name="Photo" Type="nvarchar(max)" />
+          <Property Name="Role" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserAndTask">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="idUser" Type="int" Nullable="false" />
+          <Property Name="idTask" Type="int" Nullable="false" />
+          <Property Name="idStatus" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_TaskAndTheory_Task">
+          <End Role="Task" Type="Self.Task" Multiplicity="1" />
+          <End Role="TaskAndTheory" Type="Self.TaskAndTheory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Task">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TaskAndTheory">
+              <PropertyRef Name="idTask" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaskAndTheory_Theory">
+          <End Role="Theory" Type="Self.Theory" Multiplicity="1" />
+          <End Role="TaskAndTheory" Type="Self.TaskAndTheory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Theory">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TaskAndTheory">
+              <PropertyRef Name="idTheory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserAndTask_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="1" />
+          <End Role="UserAndTask" Type="Self.UserAndTask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="UserAndTask">
+              <PropertyRef Name="idStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserAndTask_Task">
+          <End Role="Task" Type="Self.Task" Multiplicity="1" />
+          <End Role="UserAndTask" Type="Self.UserAndTask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Task">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="UserAndTask">
+              <PropertyRef Name="idTask" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserAndTask_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="UserAndTask" Type="Self.UserAndTask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="UserAndTask">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище chineModelContainer">
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Task" EntityType="Self.Task" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TaskAndTheory" EntityType="Self.TaskAndTheory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Theory" EntityType="Self.Theory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserAndTask" EntityType="Self.UserAndTask" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_TaskAndTheory_Task" Association="Self.FK_TaskAndTheory_Task">
+            <End Role="Task" EntitySet="Task" />
+            <End Role="TaskAndTheory" EntitySet="TaskAndTheory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaskAndTheory_Theory" Association="Self.FK_TaskAndTheory_Theory">
+            <End Role="Theory" EntitySet="Theory" />
+            <End Role="TaskAndTheory" EntitySet="TaskAndTheory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserAndTask_Status" Association="Self.FK_UserAndTask_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="UserAndTask" EntitySet="UserAndTask" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserAndTask_Task" Association="Self.FK_UserAndTask_Task">
+            <End Role="Task" EntitySet="Task" />
+            <End Role="UserAndTask" EntitySet="UserAndTask" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserAndTask_User" Association="Self.FK_UserAndTask_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserAndTask" EntitySet="UserAndTask" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="chineModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_User_Role" FromRole="Role" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="UserAndTask" Relationship="Self.FK_UserAndTask_Status" FromRole="Status" ToRole="UserAndTask" />
+        </EntityType>
+        <EntityType Name="Task">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Discription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="TaskAndTheory" Relationship="Self.FK_TaskAndTheory_Task" FromRole="Task" ToRole="TaskAndTheory" />
+          <NavigationProperty Name="UserAndTask" Relationship="Self.FK_UserAndTask_Task" FromRole="Task" ToRole="UserAndTask" />
+        </EntityType>
+        <EntityType Name="TaskAndTheory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="idTask" Type="Int32" Nullable="false" />
+          <Property Name="idTheory" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Task" Relationship="Self.FK_TaskAndTheory_Task" FromRole="TaskAndTheory" ToRole="Task" />
+          <NavigationProperty Name="Theory" Relationship="Self.FK_TaskAndTheory_Theory" FromRole="TaskAndTheory" ToRole="Theory" />
+        </EntityType>
+        <EntityType Name="Theory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Symbol" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Discription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TaskAndTheory" Relationship="Self.FK_TaskAndTheory_Theory" FromRole="Theory" ToRole="TaskAndTheory" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Surname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patronymic" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Level" Type="Int32" />
+          <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Role" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Role1" Relationship="Self.FK_User_Role" FromRole="User" ToRole="Role" />
+          <NavigationProperty Name="UserAndTask" Relationship="Self.FK_UserAndTask_User" FromRole="User" ToRole="UserAndTask" />
+        </EntityType>
+        <EntityType Name="UserAndTask">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="idUser" Type="Int32" Nullable="false" />
+          <Property Name="idTask" Type="Int32" Nullable="false" />
+          <Property Name="idStatus" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Status" Relationship="Self.FK_UserAndTask_Status" FromRole="UserAndTask" ToRole="Status" />
+          <NavigationProperty Name="Task" Relationship="Self.FK_UserAndTask_Task" FromRole="UserAndTask" ToRole="Task" />
+          <NavigationProperty Name="User" Relationship="Self.FK_UserAndTask_User" FromRole="UserAndTask" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_User_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserAndTask_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="1" />
+          <End Role="UserAndTask" Type="Self.UserAndTask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="UserAndTask">
+              <PropertyRef Name="idStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaskAndTheory_Task">
+          <End Role="Task" Type="Self.Task" Multiplicity="1" />
+          <End Role="TaskAndTheory" Type="Self.TaskAndTheory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Task">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TaskAndTheory">
+              <PropertyRef Name="idTask" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserAndTask_Task">
+          <End Role="Task" Type="Self.Task" Multiplicity="1" />
+          <End Role="UserAndTask" Type="Self.UserAndTask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Task">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="UserAndTask">
+              <PropertyRef Name="idTask" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaskAndTheory_Theory">
+          <End Role="Theory" Type="Self.Theory" Multiplicity="1" />
+          <End Role="TaskAndTheory" Type="Self.TaskAndTheory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Theory">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TaskAndTheory">
+              <PropertyRef Name="idTheory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserAndTask_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="UserAndTask" Type="Self.UserAndTask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="UserAndTask">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="chineEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Role" EntityType="Self.Role" />
+          <EntitySet Name="Status" EntityType="Self.Status" />
+          <EntitySet Name="Task" EntityType="Self.Task" />
+          <EntitySet Name="TaskAndTheory" EntityType="Self.TaskAndTheory" />
+          <EntitySet Name="Theory" EntityType="Self.Theory" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <EntitySet Name="UserAndTask" EntityType="Self.UserAndTask" />
+          <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserAndTask_Status" Association="Self.FK_UserAndTask_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="UserAndTask" EntitySet="UserAndTask" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaskAndTheory_Task" Association="Self.FK_TaskAndTheory_Task">
+            <End Role="Task" EntitySet="Task" />
+            <End Role="TaskAndTheory" EntitySet="TaskAndTheory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserAndTask_Task" Association="Self.FK_UserAndTask_Task">
+            <End Role="Task" EntitySet="Task" />
+            <End Role="UserAndTask" EntitySet="UserAndTask" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaskAndTheory_Theory" Association="Self.FK_TaskAndTheory_Theory">
+            <End Role="Theory" EntitySet="Theory" />
+            <End Role="TaskAndTheory" EntitySet="TaskAndTheory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserAndTask_User" Association="Self.FK_UserAndTask_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserAndTask" EntitySet="UserAndTask" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище chineModelContainer" CdmEntityContainer="chineEntities">
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="chineModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Status">
+            <EntityTypeMapping TypeName="chineModel.Status">
+              <MappingFragment StoreEntitySet="Status">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Task">
+            <EntityTypeMapping TypeName="chineModel.Task">
+              <MappingFragment StoreEntitySet="Task">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Discription" ColumnName="Discription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TaskAndTheory">
+            <EntityTypeMapping TypeName="chineModel.TaskAndTheory">
+              <MappingFragment StoreEntitySet="TaskAndTheory">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idTask" ColumnName="idTask" />
+                <ScalarProperty Name="idTheory" ColumnName="idTheory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Theory">
+            <EntityTypeMapping TypeName="chineModel.Theory">
+              <MappingFragment StoreEntitySet="Theory">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+                <ScalarProperty Name="Discription" ColumnName="Discription" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="chineModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserAndTask">
+            <EntityTypeMapping TypeName="chineModel.UserAndTask">
+              <MappingFragment StoreEntitySet="UserAndTask">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idUser" ColumnName="idUser" />
+                <ScalarProperty Name="idTask" ColumnName="idTask" />
+                <ScalarProperty Name="idStatus" ColumnName="idStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

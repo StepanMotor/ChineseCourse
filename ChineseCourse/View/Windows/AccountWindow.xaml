@@ -167,9 +167,10 @@
             </Grid.ColumnDefinitions>
             
             <Image Source="/Resources/Ellipse 24.png" Grid.Column="1"/>
+            <Button Grid.Column="1" Background="Transparent" BorderBrush="Transparent" Name="UserBtn" Click="UserBtn_Click"/>
 
             <Grid Grid.Column="3">
-                <TextBlock Text="ФИО" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular" FontSize="40" TextWrapping="Wrap" TextAlignment="Center"/>
+                <TextBlock Text="Степашихина Валерия" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular" FontSize="40" TextWrapping="Wrap" TextAlignment="Center"/>
             </Grid>
 
             <Button Grid.Column="5"

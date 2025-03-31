@@ -167,9 +167,10 @@
             </Grid.ColumnDefinitions>
 
             <Image Source="/Resources/Ellipse 24.png" Grid.Column="1"/>
+            <Button Grid.Column="1" Background="Transparent" BorderBrush="Transparent" Name="ManagerBtn" Click="ManagerBtn_Click"/>
 
             <Grid Grid.Column="3">
-                <TextBlock Text="ФИО" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular" FontSize="40" TextWrapping="Wrap" TextAlignment="Center"/>
+                <TextBlock Text="Степашихина Валерия" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular" FontSize="40" TextWrapping="Wrap" TextAlignment="Center"/>
             </Grid>
 
             <Button Grid.Column="5"
@@ -204,7 +205,7 @@
 
             <TextBox Grid.Row="0" Grid.Column="1" x:Name="FirstNameTb" 
 Style="{StaticResource RoundedTextBoxStyle}" VerticalContentAlignment="Center" FontWeight="Regular" FontSize="30"/>
-            <TextBlock Grid.Column="1" Grid.Row="0" Text="Имя" FontSize="30" IsHitTestVisible="False" VerticalAlignment="Center" Margin="30 0 10 0" Foreground="#6B6B6B">
+            <TextBlock Grid.Column="1" Grid.Row="0" Text="Степашихина" FontSize="30" IsHitTestVisible="False" VerticalAlignment="Center" Margin="30 0 10 0" Foreground="#6B6B6B">
                 <TextBlock.Style>
                     <Style TargetType="TextBlock">
                         <Setter Property="Visibility" Value="Collapsed"/>
@@ -219,7 +220,7 @@ Style="{StaticResource RoundedTextBoxStyle}" VerticalContentAlignment="Center" F
 
             <TextBox Grid.Row="2" Grid.Column="1" x:Name="LastNameTb" 
 Style="{StaticResource RoundedTextBoxStyle}" VerticalContentAlignment="Center" FontWeight="Regular" FontSize="30"/>
-            <TextBlock Grid.Column="1" Grid.Row="2" Text="Фамилия" FontSize="30" IsHitTestVisible="False" VerticalAlignment="Center" Margin="30 0 10 0" Foreground="#6B6B6B">
+            <TextBlock Grid.Column="1" Grid.Row="2" Text="Валерия" FontSize="30" IsHitTestVisible="False" VerticalAlignment="Center" Margin="30 0 10 0" Foreground="#6B6B6B">
                 <TextBlock.Style>
                     <Style TargetType="TextBlock">
                         <Setter Property="Visibility" Value="Collapsed"/>
@@ -234,7 +235,7 @@ Style="{StaticResource RoundedTextBoxStyle}" VerticalContentAlignment="Center" F
 
             <TextBox Grid.Row="4" Grid.Column="1" x:Name="EmailTb" 
 Style="{StaticResource RoundedTextBoxStyle}" VerticalContentAlignment="Center" FontWeight="Regular" FontSize="30"/>
-            <TextBlock Grid.Column="1" Grid.Row="4" Text="Почта" FontSize="30" IsHitTestVisible="False" VerticalAlignment="Center" Margin="30 0 10 0" Foreground="#6B6B6B">
+            <TextBlock Grid.Column="1" Grid.Row="4" Text="StepashikhinaVA" FontSize="30" IsHitTestVisible="False" VerticalAlignment="Center" Margin="30 0 10 0" Foreground="#6B6B6B">
                 <TextBlock.Style>
                     <Style TargetType="TextBlock">
                         <Setter Property="Visibility" Value="Collapsed"/>
@@ -249,7 +250,7 @@ Style="{StaticResource RoundedTextBoxStyle}" VerticalContentAlignment="Center" F
 
             <PasswordBox x:Name="PasswordPb" Style="{StaticResource RoundedPasswordBoxStyle}" PasswordChanged="PasswordPb_PasswordChanged"  Grid.Row="6" Grid.Column="1" VerticalContentAlignment="Center" FontWeight="Regular" FontSize="30"/>
             <TextBlock x:Name="PasswordPlaceholder" Grid.Row="6" Grid.Column="1" FontWeight="Regular" FontSize="30" VerticalAlignment="Center" Margin="30 0 10 0" Foreground="#6B6B6B"
-       Text="Пароль" 
+       Text="***" 
        IsHitTestVisible="False"
        Visibility="Visible"/>
         </Grid>

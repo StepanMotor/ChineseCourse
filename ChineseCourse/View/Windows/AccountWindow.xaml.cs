@@ -36,5 +36,12 @@ namespace ChineseCourse.View.Windows
         {
 
         }
+
+        private void UserBtn_Click(object sender, RoutedEventArgs e)
+        {
+            LevelsWindow LevelsWindow = new LevelsWindow();
+            LevelsWindow.Show();
+            Close();
+        }
     }
 }
